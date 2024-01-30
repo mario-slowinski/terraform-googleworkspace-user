@@ -7,7 +7,7 @@ resource "googleworkspace_user" "primary_email" {
     given_name  = name.value.given_name
   }
 
-  primary_email = each.value.primary_email
+  primary_email = each.value
 
   dynamic "addresses" {
     for_each = { for index, address in var.addresses : index => address if address.type != null }
