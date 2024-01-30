@@ -42,7 +42,7 @@ variable "addresses" {
             "other",
             "work",
           ],
-          address.type != null ? address.type : "default"
+          address.type != null ? address.type : "work"
         )
       ],
     ))
@@ -104,7 +104,7 @@ variable "emails" {
             "other",
             "work",
           ],
-          email.type != null ? email.type : "default"
+          email.type != null ? email.type : "work"
         )
       ],
     ))
@@ -140,7 +140,7 @@ variable "external_ids" {
             "network",
             "organization",
           ],
-          external_id.type != null ? external_id.type : "default"
+          external_id.type != null ? external_id.type : "login_id"
         )
       ],
     ))
@@ -266,7 +266,7 @@ variable "keywords" {
             "occupation",
             "outlook",
           ],
-          keyword.type != null ? keyword.type : "default"
+          keyword.type != null ? keyword.type : "occupation"
         )
       ],
     ))
