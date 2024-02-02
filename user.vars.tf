@@ -605,3 +605,12 @@ Possible values are:
 EOT
   }
 }
+
+variable "timeouts" {
+  type = object({
+    create = optional(string)
+    update = optional(string)
+  })
+  description = "Timeouts block."
+  default     = null
+}

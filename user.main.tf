@@ -180,6 +180,14 @@ resource "googleworkspace_user" "primary_email" {
 
   suspended = var.suspended
 
+  dynamic "timeouts" {
+    for_each = var.timeouts != null ? toset([var.timeouts]) : toset([])
+    content {
+      create = timeouts.value.create
+      update = timeouts.value.update
+    }
+  }
+
   dynamic "websites" {
     for_each = { for index, website in var.websites : index => website if website.type != null }
     content {
